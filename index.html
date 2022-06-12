@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+     <!-- Required meta tags -->
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Gota Himalaia</title>
+
+    <link rel="shortcut icon" href="img/favicon.jpeg" />
+
+    <!-- CSS -->
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="css/style.css" />
+
+    <link href="css/ripple.min.css" rel="stylesheet" />
+  </head>
+
+  <div
+    id="top-band"
+    style="background: #d9877c top left no-repeat; min-height: 5px"
+  ></div>
+
+  <style>
+    .videoWrapper {
+      position: relative;
+      width: 100%;
+      height: 680px;
+      display: block;
+      margin: 0 auto;
+      margin-top: 30px;
+      margin-bottom: 30px;
+    }
+    .videoWrapper iframe {
+      width: 100%;
+      height: 100%;
+    }
+    button#mute-video {
+      color: #fff;
+      background-color: #b6412e;
+      font-size: 24px;
+      margin: 30px auto -50px auto;
+      display: inline-block;
+    }
+    .overlay_1,
+    .overlay_2,
+    .overlay_3 {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 10;
+      cursor: pointer;
+    }
+    .overlay_2,
+    .overlay_3 {
+      display: none;
+      z-index: 5;
+    }
+    .overlay_2 img {
+      opacity: 0;
+    }
+    .overlay_1 {
+      background-color: rgba(0, 0, 0, 0.3);
+    }
+    .overlay_1 > div {
+      background: rgba(0, 0, 0, 0.57);
+      border-radius: 5px;
+      display: flex;
+      padding: 5px 10px;
+      align-items: center;
+      position: absolute;
+      top: 40px;
+    }
+    .overlay_1 p {
+      font-size: 40px;
+      margin-left: 10px;
+      color: #e20808;
+      font-weight: 900;
+      margin-top: 10px;
+      text-transform: uppercase;
+    }
+    @media (max-width: 900px) {
+      .videoWrapper {
+        height: 480px;
+      }
+    }
+    @media (max-width: 668px) {
+      .overlay_1 p {
+        font-size: 20px;
+        line-height: 30px;
+      }
+      .overlay_1 > div img {
+        width: 40px;
+      }
+    }
+    @media (max-width: 400px) {
+      .overlay_1 p {
+        font-size: 16px;
+        line-height: 20px;
+      }
+      .overlay_1 > div img {
+        width: 20px;
+      }
+      .overlay_1 > div {
+        padding: 3px;
+      }
+    }
+    .overlay_3 {
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+    .audio_button {
+      display: block;
+      overflow: hidden;
+      text-align: center;
+      padding: 30px 0px;
+      display: none;
+    }
+
+    #delay_section {
+      padding: 40px 0px;
+      display: none;
+    }
+    @keyframes color_chng {
+      0% {
+        background-color: #b6412e;
+      }
+      100% {
+        background-color: #eaa31c;
+        box-shadow: 0 0 10px 2px #b6412e;
+      }
+    }
+    .audio_button button {
+      margin: 0 !important;
+      animation: color_chng 1s;
+      animation-iteration-count: infinite;
+    }
+    @media screen and (max-width: 768px) {
+      .videoWrapper {
+        width: 140%;
+        height: 415px;
+        margin: 30px auto;
+        margin-left: -100px;
+      }
+    }
+    @media screen and (max-width: 480px) {
+      .videoWrapper {
+        width: 100%;
+        height: 225px;
+        margin-left: 0;
+      }
+    }
+    @media screen and (max-width: 375px) {
+      .videoWrapper {
+        width: 100%;
+        height: 205px;
+      }
+    }
+    @media screen and (max-width: 320px) {
+      .videoWrapper {
+        width: 100%;
+        height: 175px;
+      }
+    }
+  </style>
+
+  <body>
+    
+    <section
+      class="hero"
+      style="
+        background-color: white !important;
+        background-image: null !important;
+      "
+    >
+      <div class="container">
+        <div class="d-flex justify-content-center" style="margin-bottom: 20px">
+          <h1 style="color: red !important">Aumente o volume!</h1>
+        </div>
+
+       <script type="text/javascript" id="scr_6254430019625f00081c53a9">var s=document.createElement("script");s.src="https://cdn.converteai.net/7ccc1362-2860-4371-917c-92ecfbec948a/players/6254430019625f00081c53a9/player.js",s.async=!0,document.head.appendChild(s);</script>
+
+        <div class="row">
+          <div class="col">
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+         
+              <div class="overlay_2"></div>
+              <div class="overlay_3">
+                <svg
+                  width="80"
+                  height="80"
+                  viewBox="0 0 80 80"
+                  fill="e20808"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g clip-path="url(#clip0)">
+                    <path
+                      d="M71.3125 33.5469L16.3125 1.03125C11.8438 -1.60938 5 0.953122 5 7.48437V72.5C5 78.3594 11.3594 81.8906 16.3125 78.9531L71.3125 46.4531C76.2187 43.5625 76.2344 36.4375 71.3125 33.5469V33.5469Z"
+                      fill="#E20808"
+                    />
+                  </g>
+                  <defs>
+                    <clipPath id="clip0">
+                      <rect width="80" height="80" fill="white" />
+                    </clipPath>
+                  </defs>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <div class="som" style="color: black !important">
+              <img style="max-width: 50px" src="img/audio.png" />
+              <b>Verifique se o seu som está ligado!</b>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  <section class="kits_content" id="button_chechout_hero">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 col-lg-12 col-sm-12">
+          <h2>OFERTA ESPECIAL PARA VOCÊ!</h2>
+          <h3>Aproveite, promoção por tempo limitado!</h3>
+        </div>
+      
+        <!-- Oferta 12 potes !-->
+        <div class="col-md-3 col-lg-3 col-sm-3">
+          <!-- Link da oferta -> Dentro da tag: href="link" !-->
+          <a href="https://ev.braip.com/campanhas/cpa/cam2xev9d/?split=12" class="chekout" target="_blank">
+            <img src="img/kit1.webp" class="oferta-item img-fluid img-responsive">
+          </a>
+        </div>
+        <!-- Oferta 12 potes !-->
+        
+        <!-- Oferta 5 potes !-->
+        <div class="col-md-3 col-lg-3 col-sm-3">
+          <!-- Link da oferta -> Dentro da tag: href="link" !-->
+          <a href="https://ev.braip.com/campanhas/cpa/camo8r5z6/?split=12" class="chekout" target="_blank">
+            <img src="img/kit2.webp" class="oferta-item img-fluid img-responsive">
+          </a>
+        </div>
+        <!-- Oferta 5 potes !-->
+        
+        <!-- Oferta 3 potes !-->
+        <div class="col-md-3 col-lg-3 col-sm-3">
+          <!-- Link da oferta -> Dentro da tag: href="link" !-->
+          <a href="https://ev.braip.com/campanhas/cpa/camjp1re6/?split=12" class="chekout" target="_blank">
+            <img src="img/kit3.webp" class="oferta-item img-fluid img-responsive">
+          </a>
+        </div>
+        <!-- Oferta 3 potes !-->
+        
+        <!-- Oferta 1 pote !-->
+        <div class="col-md-3 col-lg-3 col-sm-3">
+          <!-- Link da oferta -> Dentro da tag: href="link" !-->
+          <a href="https://ev.braip.com/campanhas/cpa/cam45nyzp/?split=12" class="chekout" target="_blank">
+            <img src="img/kit4.webp" class="oferta-item img-fluid img-responsive">
+          </a>
+        </div>
+        <!-- Oferta 1 pote !-->
+      </div>
+    </div>
+    </section>
+    
+    <br />
+
+    <section class="c-section pt-5" style="background-color: #FFFFFF">
+      <div class="container" id="c-container" style="display: none">
+        <div class="row count-c">
+          <div clas="col">24 Comentários</div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <!-- COMENTÁRIOS 1 -->
+            <div class="c-content">
+              <div>
+                <div class="foto-c">
+                  <img src="img/comentarios/1.jpg" alt="Gota Himalaia" />
+                </div>
+                <div class="nome-c">Luciano disse:</div>
+                <div class="comentario-c">
+                  Cara, muito obrigado, achava que isso n ia funcionar pq já
+                  tinha feito de td pra melhorar minha ereção, mas msmo assim
+                  quis tentar e olha agora parece que tenho 20 anos de novo kkkk
+                </div>
+              </div>
+              <div class="hora-c">Responder · Curtir · Seguir · 3 min</div>
+            </div>
+
+            <!-- COMENTÁRIOS 2 -->
+            <div class="c-content">
+              <div>
+                <div class="foto-c">
+                  <img src="img/comentarios/2.jpg" alt="Gota Himalaia" />
+                </div>
+                <div class="nome-c">Eduardo disse:</div>
+                <div class="comentario-c">
+                  Precisava muito resolver minha disfunção erétil, isso estava
+                  acabando comigo? Nunca gostei de ficar tomando aquelas
+                  pílulas... Então não sabia o que fazer... Comecei a usar isso
+                  e agora meu garoto parece até que crescer uns cm
+                </div>
+              </div>
+              <div class="hora-c">Responder · Curtir · Seguir · 4 min</div>
+            </div>
+
+            <!-- COMENTÁRIOS 3 -->
+            <div class="c-content">
+              <div>
+                <div class="foto-c">
+                  <img src="img/comentarios/3.jpg" alt="Gota Himalaia" />
+                </div>
+                <div class="nome-c">Enrico disse:</div>
+                <div class="comentario-c">
+                  Já tinha tentado até usar uns produtos de testosterona, mas
+                  não funcionou. Usando isso pela segunda vez, e não tenho mais
+                  problemas em deixar duro. E o melhor é que nem estou gastando
+                  com pílulas kkkkkk muito bom!!! Obrigado 😀
+                </div>
+              </div>
+              <div class="hora-c">Responder · Curtir · Seguir · 5 min</div>
+            </div>
+
+            <!-- COMENTÁRIOS 4 -->
+            <div class="c-content">
+              <div>
+                <div class="foto-c">
+                  <img src="img/comentarios/4.jpg" alt="Gota Himalaia" />
+                </div>
+                <div class="nome-c">Daniel disse:</div>
+                <div class="comentario-c">
+                  Eu realmente precisava disso, achei o botão pra fazer meu
+                  parceiro ficar duro de novo kkkk Eu já estava sem esperança,
+                  mas deu certo!!! Estou ansioso pra usar com outras mulheres!
+                </div>
+              </div>
+              <div class="hora-c">Responder · Curtir · Seguir · 12 min</div>
+            </div>
+
+            <!-- COMENTÁRIOS 5 -->
+            <div class="c-content">
+              <div>
+                <div class="foto-c">
+                  <img src="img/comentarios/5.jpg" alt="Gota Himalaia" />
+                </div>
+                <div class="nome-c">Juliano disse:</div>
+                <div class="comentario-c">
+                  Roberto, você deveria vender isso por um milhããão ele funciona
+                  mesmo! Eu já tinha feito tudo que podia e não conseguia vencer
+                  meu medo de falhar na hora H, agora consigo deixar duro sempre
+                  que quiser! Muito feliz! Vou seguir os passos e nunca mais vou
+                  me preocupar com isso 😀
+                </div>
+              </div>
+              <div class="hora-c">Responder · Curtir · Seguir · 19 min</div>
+            </div>
+
+            <!-- COMENTÁRIOS 6 -->
+            <div class="c-content">
+              <div>
+                <div class="foto-c">
+                  <img src="img/comentarios/6.jpg" alt="Gota Himalaia" />
+                </div>
+                <div class="nome-c">Calebe Silva disse:</div>
+                <div class="comentario-c">
+                  Tô de cara com isso! N sabia que realmente ia funcionar, já
+                  faz uns 30 dias dias que to usando e adivinha consigo deixar
+                  duro toda vez!!!
+                </div>
+              </div>
+              <div class="hora-c">Responder · Curtir · Seguir · 24 min</div>
+            </div>
+
+            <!-- COMENTÁRIOS 7 -->
+            <div class="c-content">
+              <div>
+                <div class="foto-c">
+                  <img src="img/comentarios/7.jpg" alt="Gota Himalaia" />
+                </div>
+                <div class="nome-c">Cristiano disse:</div>
+                <div class="comentario-c">
+                  Já fazia dois anos que eu sofria com problemas de ereção...
+                  mas agora tudo passou não tenho mais medo de sair com mulheres
+                  🙂 brigado isso é perfeito!
+                </div>
+              </div>
+              <div class="hora-c">Responder · Curtir · Seguir · 26 min</div>
+            </div>
+
+            <!-- COMENTÁRIOS 8 COM RESPOSTAS -->
+            <div class="c-content">
+              <div>
+                <div class="foto-c">
+                  <img src="img/comentarios/8.jpg" alt="Gota Himalaia" />
+                </div>
+                <div class="nome-c">Carlos disse:</div>
+                <div class="comentario-c">
+                  Sofro de disfunção erétil já faz 6 meses será que funciona?
+                </div>
+              </div>
+              <div class="hora-c">Responder · Curtir · Seguir · 3 min</div>
+            </div>
+
+            <div class="c-content resposta">
+              <!-- RESPOSTA 1 -->
+              <div class="resposta-c">
+                <div>
+                  <div class="foto-c">
+                    <img src="img/comentarios/9.jpg" alt="Gota Himalaia" />
+                  </div>
+                  <div class="nome-c">Daniel disse:</div>
+                  <div class="comentario-c">
+                    Carlos eu já estava tentando resolver meu problema com
+                    ereção fazia quase dois anos e tava pensano em desistir.
+                    Isso foi minha última tentativa que deu certo demais. Pode
+                    testar vc vai ver como funciona.
+                  </div>
+                </div>
+                <div class="hora-c">Responder · Curtir · Seguir · 3 min</div>
+              </div>
+
+              <!-- RESPOSTA 2 -->
+              <div class="resposta-c">
+                <div>
+                  <div class="foto-c">
+                    <img src="img/comentarios/10.jpg" alt="Gota Himalaia" />
+                  </div>
+                  <div class="nome-c">Cesar disse:</div>
+                  <div class="comentario-c">
+                    Carlos eu n tinha disfunção erétil, mas estava broxando
+                    direto, e isso me fazia ficar inseguro. depois que comecei a
+                    usar isso nunca mais tive problemas de ereção faz 2 anos.
+                  </div>
+                </div>
+                <div class="hora-c">Responder · Curtir · Seguir · 3 min</div>
+              </div>
+
+              <!-- RESPOSTA 3 -->
+              <div class="resposta-c">
+                <div>
+                  <div class="foto-c">
+                    <img src="img/comentarios/8.jpg" alt="Gota Himalaia" />
+                  </div>
+                  <div class="nome-c">Carlos disse:</div>
+                  <div class="comentario-c">Valeu galera, vou tentar 🙂</div>
+                </div>
+                <div class="hora-c">Responder · Curtir · Seguir · 3 min</div>
+              </div>
+            </div>
+
+            <!-- COMENTÁRIOS 11 -->
+            <div class="c-content">
+              <div>
+                <div class="foto-c">
+                  <img src="img/comentarios/11.jpg" alt="Gota Himalaia" />
+                </div>
+                <div class="nome-c">Antônio disse:</div>
+                <div class="comentario-c">
+                  Minha vida agora é outra!!! Obrigado por isso Roberto!!
+                </div>
+              </div>
+              <div class="hora-c">Responder · Curtir · Seguir · 39 min</div>
+            </div>
+
+            <!-- COMENTÁRIOS 12 -->
+            <div class="c-content">
+              <div>
+                <div class="foto-c">
+                  <img src="img/comentarios/12.jpg" alt="Gota Himalaia" />
+                </div>
+                <div class="nome-c">Michel disse:</div>
+                <div class="comentario-c">
+                  Gente eu achava que era mentira, mas tudo dando certo…. eu me
+                  sentia muito pra baixo, sempre com medo de levar uma mulher
+                  pra cama. Cheguei ao ponto de ir num médico da minha cidade...
+                  Por anos eu sofri com problemas de ereção, não conseguia
+                  chamar mulheres pra sair por causa disso... Com isso, consegui
+                  o impossível! Eu não to acreditando.
+                </div>
+              </div>
+              <div class="hora-c">Responder · Curtir · Seguir · 53 min</div>
+            </div>
+
+            <!-- COMENTÁRIOS 13 -->
+            <div class="c-content">
+              <div>
+                <div class="foto-c">
+                  <img src="img/comentarios/13.jpg" alt="Gota Himalaia" />
+                </div>
+                <div class="nome-c">Juliano disse:</div>
+                <div class="comentario-c">
+                  Pra mim isso parecia muito papo furado, mais nosssa… se
+                  soubesse disso antes eu nem tinha sofrido com disfunção
+                  erétil!
+                </div>
+              </div>
+              <div class="hora-c">Responder · Curtir · Seguir · 55 min</div>
+            </div>
+
+            <!-- COMENTÁRIOS 14 -->
+            <div class="c-content">
+              <div>
+                <div class="foto-c">
+                  <img src="img/comentarios/14.jpg" alt="Gota Himalaia" />
+                </div>
+                <div class="nome-c">Augusto disse:</div>
+                <div class="comentario-c">
+                  Pagaria até um milhããão por isso se soubesse que ia ficar tão
+                  feliz assim com meu resultado!!!
+                </div>
+              </div>
+              <div class="hora-c">Responder · Curtir · Seguir · 58 min</div>
+            </div>
+
+            <!-- COMENTÁRIOS 15 COM RESPOSTAS -->
+            <div class="c-content">
+              <div>
+                <div class="foto-c">
+                  <img src="img/comentarios/15.jpg" alt="Gota Himalaia" />
+                </div>
+                <div class="nome-c">Rodrigo disse:</div>
+                <div class="comentario-c">
+                  Gente eu tenho medo de gastar dinheiro e não dar certo 🙁
+                </div>
+              </div>
+              <div class="hora-c">Responder · Curtir · Seguir · 1 h</div>
+            </div>
+
+            <div class="c-content resposta">
+              <!-- RESPOSTA 1 -->
+              <div class="resposta-c">
+                <div>
+                  <div class="foto-c">
+                    <img src="img/comentarios/16.jpg" alt="Gota Himalaia" />
+                  </div>
+                  <div class="nome-c">Giovanne disse:</div>
+                  <div class="comentario-c">
+                    Eu pensava a mesma coisa, mas compraria 10 vezes depois que
+                    vi que funciona 🙂 Bora ser feliz mano! A gente merece
+                    depois que luta tanto
+                  </div>
+                </div>
+                <div class="hora-c">Responder · Curtir · Seguir · 1 h</div>
+              </div>
+
+              <!-- RESPOSTA 2 -->
+              <div class="resposta-c">
+                <div>
+                  <div class="foto-c">
+                    <img src="img/comentarios/17.jpg" alt="Gota Himalaia" />
+                  </div>
+                  <div class="nome-c">Bruno disse:</div>
+                  <div class="comentario-c">
+                    Funciona sim cara! Pode acreditar. Eu era muito inseguro por
+                    causa disso... Agora sou muito mais confiante.
+                  </div>
+                </div>
+                <div class="hora-c">Responder · Curtir · Seguir · 1 h</div>
+              </div>
+            </div>
+
+            <!-- COMENTÁRIOS 18 -->
+            <div class="c-content">
+              <div>
+                <div class="foto-c">
+                  <img src="img/comentarios/18.jpg" alt="Gota Himalaia" />
+                </div>
+                <div class="nome-c">Claudio disse:</div>
+                <div class="comentario-c">
+                  A minha vida agora é outra!!! Valeu! 🙂
+                </div>
+              </div>
+              <div class="hora-c">Responder · Curtir · Seguir · 1 h</div>
+            </div>
+
+            <!-- COMENTÁRIOS 19 -->
+            <div class="c-content">
+              <div>
+                <div class="foto-c">
+                  <img src="img/comentarios/19.jpg" alt="Gota Himalaia" />
+                </div>
+                <div class="nome-c">Adriano disse:</div>
+                <div class="comentario-c">
+                  <p>
+                    Roberto vc ta vendendo muito barato!
+                    <span class="blue">@rafaellima</span> esse aqui que te falei
+                    que funcionou pra mim. Pode comprar!
+                  </p>
+                </div>
+              </div>
+              <div class="hora-c">Responder · Curtir · Seguir · 1 h</div>
+            </div>
+
+            <!-- COMENTÁRIOS 20 -->
+            <div class="c-content">
+              <div>
+                <div class="foto-c">
+                  <img src="img/comentarios/20.jpg" alt="Gota Himalaia" />
+                </div>
+                <div class="nome-c">Fernando disse:</div>
+                <div class="comentario-c">
+                  Acabei de fazer o primeiro teste!!!! Ahhhh não acredito ta
+                  funcionando!!!
+                </div>
+              </div>
+              <div class="hora-c">Responder · Curtir · Seguir · 1 h</div>
+            </div>
+
+            <!-- COMENTÁRIOS 21 COM RESPOSTAS -->
+            <div class="c-content">
+              <div>
+                <div class="foto-c">
+                  <img src="img/comentarios/21.jpg" alt="Gota Himalaia" />
+                </div>
+                <div class="nome-c">Lucas disse:</div>
+                <div class="comentario-c">
+                  Comprei e está funcionando!!! Ta ficando duro fácil fácil 😉
+                  vou usar sempre 😀
+                </div>
+              </div>
+              <div class="hora-c">Responder · Curtir · Seguir · 1 h</div>
+            </div>
+
+            <div class="c-content resposta">
+              <!-- RESPOSTA 1 -->
+              <div class="resposta-c">
+                <div>
+                  <div class="foto-c">
+                    <img src="img/comentarios/22.jpg" alt="Gota Himalaia" />
+                  </div>
+                  <div class="nome-c">Theodoro disse:</div>
+                  <div class="comentario-c">Funciona msmo?</div>
+                </div>
+                <div class="hora-c">Responder · Curtir · Seguir · 46 min</div>
+              </div>
+
+              <!-- RESPOSTA 2 -->
+              <div class="resposta-c">
+                <div>
+                  <div class="foto-c">
+                    <img src="img/comentarios/21.jpg" alt="Gota Himalaia" />
+                  </div>
+                  <div class="nome-c">Lucas disse:</div>
+                  <div class="comentario-c">
+                    Eu fiz td q ele ensina desde que comprei e foi direitinho
+                    que nem ele fala no vídeo. Ganhei até alguns cm parece.
+                  </div>
+                </div>
+                <div class="hora-c">Responder · Curtir · Seguir · 46 min</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row face-c">
+          <div clas="col">
+            <img src="img/face-icon.png" /> Plug-in social do Facebook
+          </div>
+        </div>
+      </div>
+
+      <img
+        src="img/c1.png"
+        alt="Gota Himalaia"
+        data-enllax-ratio=".9"
+        data-enllax-type="foreground"
+        style="z-index: -99"
+        class="c1"
+      />
+
+      <img
+        src="img/c2.png"
+        alt="Gota Himalaia"
+        data-enllax-ratio=".5"
+        data-enllax-type="foreground"
+        style="z-index: -99"
+        class="c2"
+      />
+
+      <img
+        src="img/c3.png"
+        alt="Gota Himalaia"
+        data-enllax-ratio=".4"
+        data-enllax-type="foreground"
+        style="z-index: -99"
+        class="c3"
+      />
+
+      <img
+        src="img/c4.png"
+        alt="Gota Himalaia"
+        data-enllax-ratio=".7"
+        data-enllax-type="foreground"
+        style="z-index: -99"
+        class="c4"
+      />
+
+      <img
+        src="img/c5.png"
+        alt="Gota Himalaia"
+        data-enllax-ratio=".3"
+        data-enllax-type="foreground"
+        style="z-index: -99"
+        class="c5"
+      />
+
+      <img
+        src="img/c6.png"
+        alt="Gota Himalaia"
+        data-enllax-ratio=".9"
+        data-enllax-type="foreground"
+        style="z-index: -99"
+        class="c6"
+      />
+
+      <div
+        class="parallax-window"
+        data-parallax="scroll"
+        data-image-src="img/bg-top.png"
+      ></div>
+    </section>
+
+    <section
+      class="button pt-5"
+      id="button_chechout_final"
+      style="background-color: #09102b"
+    >
+      <div class="container">
+        <div class="row button_container text-center">
+          <div class="col">
+            <!-- CHECKOUT BUTTON -->
+            <a href="#button_chechout_hero">
+              <button
+                type="button"
+                data-ripple-color="#fff"
+                class="btn material-ripple"
+                data-animation="
+                            ripple"
+              >
+                Quero Meu Gota Himalaia Agora
+              </button></a
+            >
+            <div>
+              <ul class="bandeiras">
+                <li><img src="img/mastercard.png" /></li>
+                <li><img src="img/paypal.png" /></li>
+                <li><img src="img/visa.png" /></li>
+                <li><img src="img/american.png" /></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="perguntas" id="perguntas_recentes" style="display: none">
+      <div class="container">
+        <h2>Perguntas frequentes</h2>
+
+        <dl class="faq-lista js-accordion">
+          <dt>O QUE É O Gota Himalaia?</dt>
+          <dd>
+            O Gota Himalaia é um produto natural que traz os benefícios do magnésio
+            bisglicinato, zinco bisglicinato, boro, vitamina b6, licopeno de
+            tomate, selênio bisglicinato, taurina, cafeína e guaraná em pó.
+            Quando combinados na concentração correta, esses ingredientes
+            auxiliam na ereção, contribuem para a virilidade e promovem o
+            bem-estar.
+          </dd>
+          <dt>COMO DEVO UTILIZAR Gota Himalaia?</dt>
+          <dd>
+            Indica-se do uso do Gota Himalaia uma vez ao dia 20 gotas, 30 minutos antes
+            de dormir. Recomendamos o uso contínuo, pois os
+            resultados podem variar por pessoa. Se quiser um resultado ainda
+            melhor, tomar 20 gotas antes da relação sexual.
+          </dd>
+          <dt>QUEM PODE USAR Gota Himalaia? EXISTE CONTRA INDICAÇÃO?</dt>
+          <dd>
+            Gota Himalaia apresenta fórmula natural e sem os danos causados pelos
+            efeitos colaterais. O produto é indicado para qualquer pessoa. No
+            caso de pessoas com doenças preexistentes ou que utilizam algum
+            remédio regularmente, é necessário a consulta médica antes de
+            começar o uso.
+          </dd>
+          <dt>OS BENEFICIOS DE Gota Himalaia SÃO COMPROVADOS CIENTIFICAMENTE?</dt>
+          <dd>
+            A fórmula do Gota Himalaia é 100% aprovada pela ANVISA. Ela foi testada
+            por especialistas e comprovada no controle da saúde do corpo. Os
+            ingredientes que compõem sua fórmula são testados e aprovados para
+            promover um aumento do FRASCOncial de ereção sem causar efeitos
+            colaterais.
+          </dd>
+          <dt>QUAL O PRAZO DE ENTREGA DO Gota Himalaia?</dt>
+          <dd>
+            Para acompanhar o seu envio clique aqui (coloque o número da sua
+            transação ou CPF que os dados serão impressos). Após a compra, o
+            prazo para que seus dados estejam no sistema, é de até 72 horas.
+            Caso não consiga depois desse período, entre em contato conosco.
+          </dd>
+          <dt>Gota Himalaia É VENDIDO NA FARMÁCIA OU MERCADO LIVRE?</dt>
+          <dd>Não, a venda é exclusivamente feita pelo site oficial.</dd>
+          <dt>O SITE É SEGURO?</dt>
+          <dd>
+            Sim, 100% seguro. Utilizamos uma plataforma inovadora para processar
+            nossos pagamentos e ela usa as ferramentas de segurança mais
+            avançadas.
+          </dd>
+        </dl>
+
+        <a class="mybtn" href="#button_chechout_hero">
+          <button
+            type="button"
+            data-ripple-color="#fff"
+            class="btn material-ripple"
+            data-animation="
+                            ripple"
+          >
+            Quero Meu Gota Himalaia Agora
+          </button></a
+        >
+      </div>
+    </section>
+    <hr />
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12 col-md-12">    
+            <div class="row cpy">
+              <div class="col text-center" style="color: black !important">
+                Copyright 2021 -Gota Himalaia ®<br />
+                Todos os direitos reservados.
+              </div>
+            </div>
+            <div class="row links">
+              <div class="col text-center">
+                <a href="termos-de-uso.html" target="_blank"
+                  >Condições de uso</a
+                >
+                <a href="politica-de-privacidade.html" target="_blank"
+                  >Políticas de Privacidade</a
+                >
+                <a href="responsabilidade.html" target="_blank"
+                  >Responsabilidade</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="js/scripts.js"></script>
+    <script src="js/jquery.enllax.min.js"></script>
+    <!-- <script src="js/parallax.min.js"></script> -->
+
+    <script>
+      (function ($) {
+        $(window).enllax();
+      })(jQuery);
+    </script>
+
+    <script>
+      (function (window, location) {
+        history.replaceState(null, document.title, location.pathname + "#vsl");
+        history.pushState(null, document.title, location.pathname);
+
+        window.addEventListener(
+          "popstate",
+          function () {
+            if (location.hash === "#vsl") {
+              history.replaceState(null, document.title, location.pathname);
+              setTimeout(function () {
+                location.replace("./semdelay");
+              }, 10);
+            }
+          },
+          false
+        );
+      })(window, location);
+
+      function initAccordion() {
+        const accordionList = document.querySelectorAll(".js-accordion dt");
+        if (accordionList.length) {
+          accordionList[0].classList.add("ativo");
+          accordionList[0].nextElementSibling.classList.add("ativo");
+
+          function activeAccordion() {
+            this.classList.toggle("ativo");
+            this.nextElementSibling.classList.toggle("ativo");
+          }
+
+          accordionList.forEach((item) => {
+            item.addEventListener("click", activeAccordion);
+          });
+        }
+      }
+
+      initAccordion();
+    </script>
+  </body>
+</html>
