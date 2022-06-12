@@ -27,7 +27,7 @@ $(document).ready(function () {
     $("#button_chechout_final").show();
     $("#c-container").show();
     $("#perguntas_recentes").show();
-  }, 1584 * 1000);
+  }, );
 });
 
-//1750
+//1584 * 1000
